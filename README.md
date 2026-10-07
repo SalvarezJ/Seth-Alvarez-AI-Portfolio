@@ -2,7 +2,7 @@
 Artificial Intelligence A.A.S., AI and Machine Learning - Houston Community College
 
 ## About Me
-I'm an AI student at Houston Community College with a focus on AI and Machine
+I'm a student at Houston Community College with a focus on AI and Machine
 Learning. This portfolio shows my completed course projects.
 
 ## Technical Skills
@@ -22,3 +22,7 @@ Learning. This portfolio shows my completed course projects.
   
 ### Machine Learning (ITAI 1371)
 - [Telco Churn EDA](MachineLearning-ITAI1371/Telco-Churn-EDA) - Exploratory data analysis of 7,043 telecom customers to find what goes with churn and to plan how to prepare the data for a model.
+
+## Contact
+- Email: salva246@gmail.com
+- GitHub: [github.com/SalvarezJ](https://github.com/SalvarezJ)
