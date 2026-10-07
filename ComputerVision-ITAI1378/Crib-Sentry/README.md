@@ -12,7 +12,7 @@ A traditional baby monitor only helps if someone watches it. Parents cannot watc
 ## Solution Overview
 The system takes one image from a crib camera and runs three detectors. One detector finds the crib, one finds the child and one finds toys and blankets. The system compares the positions of the boxes and gives one of four alerts: all clear, left the crib, not visible or hazard present.
 
-## Technical Approach
+## Approach
 - CV technique: Object detection
 - Model architecture: CNN
 - Model: YOLO11n, three models
@@ -34,7 +34,7 @@ The system takes one image from a crib camera and runs three detectors. One dete
 
 Baby in Crib contains studio photos and my first detector fails on real rooms. I add three datasets to train on more cribs and on real camera frames of children. More details are in [data/README.md](data/README.md).
 
-## Success Metrics
+## Results
 
 | Metric | Target | Result |
 |---|---|---|
@@ -73,6 +73,24 @@ A failure: the child climbs out but the system gives "all clear" because in a si
 |---|---|---|
 | The system does not find a child that lies down or is partly below a blanket | The system gives "not visible" when it finds a crib and no child | On CribHD-C the Child detector finds the doll in 104 of 120 images. The Crib detector finds a crib in only 76 and that causes most errors. |
 | No dataset has a child out of a crib | Find a small extra dataset on Roboflow Universe | I find 10 test images in Baby object detection final. The first system gets 0 of 10 correct and the new system gets 7. |
+
+## Key Findings
+- The Crib detector is the weakest part of the system because each alert needs a crib box.
+- On CribHD-C, the system finds the child in 104 of 120 images but finds a crib in only 76.
+- I never considered this risk in my plan, and it became the largest one.
+- More training data does help; "left the crib" goes from 0 of 10 correct to 7 of 10.
+- Side views of cribs break my "inside" rule, because the child box is still considered on the crib box.
+
+## Technologies Used
+- Python and Google Colab with a T4 GPU
+- YOLO11n through Ultralytics, on PyTorch
+- Roboflow, Albumentations, and Pillow
+
+## How to Run
+1. Open a notebook from the `notebooks` folder in Google Colab and select a T4 GPU.
+2. Add a free Roboflow API key to Colab Secrets.
+3. Run the notebooks in order from 1 to 9; the training notebooks save the models to a Google Drive folder named `crib_sentry_v2` and the notebooks load from there.
+4. To see examples of correct alerts and failures, run `09_demo.ipynb` after the training notebooks.
 
 ## Demo Video
 https://drive.google.com/file/d/1M_8wlFlzOgJ_6HV5io6qun-LyD5dzr_a/view?usp=sharing
