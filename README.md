@@ -12,6 +12,7 @@ Learning. This portfolio shows my completed course projects.
 - Model measurement: precision, recall, mAP, and alert accuracy
 - Image classification with a CNN in PyTorch
 - Exploratory data analysis with pandas and Matplotlib
+- Classification with Logistic Regression and Decision Trees in scikit-learn
 
 ## Courses and Projects
 
@@ -22,6 +23,7 @@ Learning. This portfolio shows my completed course projects.
   
 ### Machine Learning (ITAI 1371)
 - [Telco Churn EDA](MachineLearning-ITAI1371/Telco-Churn-EDA) - Exploratory data analysis of 7,043 telecom customers to find what goes with churn and to plan how to prepare the data for a model.
+- [Wine Classification](MachineLearning-ITAI1371/Wine-Classification) - Logistic Regression and a Decision Tree on the Wine dataset with a test of how the choice of features changes the accuracy.
 
 ## Contact
 - Email: salva246@gmail.com
